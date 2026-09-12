@@ -22,17 +22,24 @@ Sono presenti e versionati:
 - sito web (`index.html`, CSS, JS)
 - test del contenuto sito.
 
-## Output binari
+## Output finali recuperati fuori da GitHub
+La File Library contiene una copia reale del PDF finale:
+- `Animali_Cibo_e_Scelte_2026.1_IT_MAC.pdf`
+
+Quindi questo PDF NON deve essere ricostruito. Va recuperato dalla Library/backup e archiviato su GitHub come output persistente verificato.
+
+## Output binari GitHub
 - GitHub Releases: nessuna Release presente al momento dell'audit.
-- Nel tree verificato non sono presenti i file PDF/DOCX finali come binari, nonostante i checkpoint ne documentino la produzione.
+- Nel tree Git verificato non sono presenti i PDF/DOCX finali come binari, nonostante i checkpoint ne documentino la produzione.
 
 ## Azione di recupero
-I PDF/DOCX presenti sui backup locali/dischi esterni devono essere confrontati con i checkpoint e poi caricati senza sostituire le versioni esistenti:
+Per PDF/DOCX presenti in Library o sui due backup locali:
 1. identificare nome/versione/data;
 2. calcolare SHA-256;
-3. creare branch `recovery/...` se il file non è già tracciato;
-4. archiviare l'output definitivo in Release o percorso dedicato del repository, a seconda della dimensione;
-5. aggiornare Scheda Madre con collegamento alla versione definitiva.
+3. creare branch `recovery/...` se serve associare documentazione/sorgenti;
+4. archiviare l'output definitivo in GitHub Release o percorso dedicato, a seconda della dimensione;
+5. aggiornare Scheda Madre con collegamento alla versione definitiva;
+6. non sostituire o cancellare gli output precedenti.
 
 ## Politica generale
-GitHub è la copia di riferimento del progetto. Backup locali restano una seconda/terza copia, non l'unica fonte dei file finali.
+GitHub è la copia di riferimento del progetto. File Library e backup locali restano copie di recupero/secondarie, non l'unica fonte dei file finali.
