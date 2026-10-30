@@ -20,6 +20,14 @@ jobs:
         run: |
           set -euo pipefail
           echo "b582a50b986eb84a7a7f376c5672043707a5c6c1facf1c70858a69264cb879b0  _temporary_delivery/MEDLAB-Care-v0.4.apk" | sha256sum -c -
+      - name: Upload temporary artifact
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: MEDLAB-Care-v0.4-direct
+          path: _temporary_delivery/MEDLAB-Care-v0.4.apk
+          retention-days: 1
+          compression-level: 0
       - name: Publish temporary release asset
         env:
           GH_TOKEN: ${{ github.token }}
